@@ -14,6 +14,8 @@
 		EFAEE2CC2118DDDD00882930 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFAEE2CA2118DDDD00882930 /* LaunchScreen.storyboard */; };
 		EFAEE2D72118DDDD00882930 /* ScrollViewTouchHandlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEE2D62118DDDD00882930 /* ScrollViewTouchHandlingTests.swift */; };
 		EFAEE2E22118DDDE00882930 /* ScrollViewTouchHandlingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEE2E12118DDDE00882930 /* ScrollViewTouchHandlingUITests.swift */; };
+		EFAEE2F02118DED300882930 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEE2EF2118DED200882930 /* DotView.swift */; };
+		EFAEE2F221194FEF00882930 /* OverlayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAEE2F121194FEF00882930 /* OverlayScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		EFAEE2DD2118DDDE00882930 /* ScrollViewTouchHandlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewTouchHandlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAEE2E12118DDDE00882930 /* ScrollViewTouchHandlingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewTouchHandlingUITests.swift; sourceTree = "<group>"; };
 		EFAEE2E32118DDDE00882930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFAEE2EF2118DED200882930 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		EFAEE2F121194FEF00882930 /* OverlayScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				EFAEE2C82118DDDD00882930 /* Assets.xcassets */,
 				EFAEE2CA2118DDDD00882930 /* LaunchScreen.storyboard */,
 				EFAEE2CD2118DDDD00882930 /* Info.plist */,
+				EFAEE2EF2118DED200882930 /* DotView.swift */,
+				EFAEE2F121194FEF00882930 /* OverlayScrollView.swift */,
 			);
 			path = ScrollViewTouchHandling;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			files = (
 				EFAEE2C42118DDDC00882930 /* ViewController.swift in Sources */,
 				EFAEE2C22118DDDC00882930 /* AppDelegate.swift in Sources */,
+				EFAEE2F221194FEF00882930 /* OverlayScrollView.swift in Sources */,
+				EFAEE2F02118DED300882930 /* DotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

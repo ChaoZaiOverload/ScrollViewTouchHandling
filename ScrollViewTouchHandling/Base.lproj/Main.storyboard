@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewTouchHandling" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-vI-a0s" userLabel="Canvas View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mpz-Cn-0GO" customClass="OverlayScrollView" customModule="ScrollViewTouchHandling" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf8-Es-try">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="470"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VAm-El-jUV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="470"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8V-sG-mbf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="470"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="wLG-B4-nxu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="470"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="light"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="470" id="fes-CW-NAy"/>
+                                        </constraints>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wf8-Es-try" secondAttribute="trailing" id="9Ar-Qp-BVV"/>
+                                    <constraint firstItem="Wf8-Es-try" firstAttribute="top" secondItem="Mpz-Cn-0GO" secondAttribute="top" id="BZy-XA-3U8"/>
+                                    <constraint firstItem="Wf8-Es-try" firstAttribute="centerX" secondItem="Mpz-Cn-0GO" secondAttribute="centerX" id="F1H-TR-tQ1"/>
+                                    <constraint firstItem="Wf8-Es-try" firstAttribute="leading" secondItem="Mpz-Cn-0GO" secondAttribute="leading" id="KZm-MM-MVA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wf8-Es-try" secondAttribute="bottom" constant="1000" id="VkN-bC-b7J"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mpz-Cn-0GO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="F4a-B4-LYz"/>
+                            <constraint firstItem="mjM-vI-a0s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GM6-hG-4ei"/>
+                            <constraint firstItem="Mpz-Cn-0GO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TFr-Ec-9XB"/>
+                            <constraint firstItem="Mpz-Cn-0GO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Twf-WG-nM2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mpz-Cn-0GO" secondAttribute="trailing" id="br1-Iu-huj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mjM-vI-a0s" secondAttribute="bottom" id="bu0-WB-fJs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mjM-vI-a0s" secondAttribute="trailing" id="sQ3-lb-P41"/>
+                            <constraint firstItem="mjM-vI-a0s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vu7-Xh-Ri3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="canvasView" destination="mjM-vI-a0s" id="g9b-f4-2Lx"/>
+                        <outlet property="drawerView" destination="Wf8-Es-try" id="RbM-8X-xeS"/>
+                        <outlet property="scrollView" destination="Mpz-Cn-0GO" id="Q1V-UK-MT8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
