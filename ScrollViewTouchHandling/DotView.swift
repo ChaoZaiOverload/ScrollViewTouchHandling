@@ -24,7 +24,7 @@ class DotView: UIView {
                 let y = random(view.bounds.size.height)
                 let x = random(view.bounds.size.width)
                 dotV.frame.origin = CGPoint(x: x, y: y)
-                dotV.frame.size = CGSize(width: 20.0, height: 20.0)
+                dotV.frame.size = CGSize(width: 40.0, height: 40.0)
             }
         }
         view.setNeedsLayout()

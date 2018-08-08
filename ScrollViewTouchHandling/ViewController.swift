@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         canvasView.backgroundColor = UIColor.darkGray
+        let touchesDelay = TouchDelayGestureRecognizer(target: nil, action: nil)
+        canvasView.addGestureRecognizer(touchesDelay)
+        
         addDots(count: 25, to: canvasView)
         DotView.arrangeRandomly(in: canvasView)
         
@@ -46,6 +49,7 @@ class ViewController: UIViewController {
             let lp = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
             lp.cancelsTouchesInView = false
             dotView.addGestureRecognizer(lp)
+            lp.delegate = self
             
             view.addSubview(dotView)
         }
@@ -76,6 +80,8 @@ class ViewController: UIViewController {
             dotView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
             self.move(dotView, with: gesture)
         }
+        scrollView.panGestureRecognizer.isEnabled = false
+        scrollView.panGestureRecognizer.isEnabled = true
     }
     
     func move(_ dotView: UIView, with gesture: UILongPressGestureRecognizer) {
@@ -97,3 +103,9 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
+}
